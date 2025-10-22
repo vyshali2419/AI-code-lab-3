@@ -1,0 +1,389 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/vyshali2419/AI-code-lab-3/blob/main/ass_10\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "XRwuy1jbmSvJ"
+      },
+      "outputs": [],
+      "source": [
+        "task:1 Write python program as shown below.\n",
+        "• Use an AI assistant to review and suggest corrections"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "prompt:correct the python program and give me the comments"
+      ],
+      "metadata": {
+        "id": "wCmCoE3qoE85"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Define a function to calculate the factorial of a number\n",
+        "def calcFact(n):\n",
+        "    result = 1\n",
+        "    # The loop should go up to and including n for the factorial calculation\n",
+        "    for i in range(1, n + 1):\n",
+        "        result = result * i\n",
+        "    return result\n",
+        "\n",
+        "# Define the main function\n",
+        "def main():\n",
+        "    # Take dynamic input from the user\n",
+        "    num_str = input(\"Enter a non-negative integer to calculate its factorial: \")\n",
+        "    try:\n",
+        "        # Convert the input string to an integer\n",
+        "        num = int(num_str)\n",
+        "        # Check if the input is a non-negative integer\n",
+        "        if num < 0:\n",
+        "            print(\"Factorial is not defined for negative numbers.\")\n",
+        "        else:\n",
+        "            # Calculate the factorial using the calcFact function\n",
+        "            FACT = calcFact(num)\n",
+        "            # Print the result\n",
+        "            print(\"The factorial of\", num, \"is\", FACT)\n",
+        "\n",
+        "            # Check if the calculated factorial is a \"BIG Number\" or \"small number\"\n",
+        "            # The variable 七 was not used in the original code and seems like a typo,\n",
+        "            # so I'll remove it and use a meaningful threshold.\n",
+        "            if FACT > 100: # Using 100 as an example threshold for \"BIG Number\"\n",
+        "                print(\"BIG Number\")\n",
+        "            else:\n",
+        "                print(\"small number\")\n",
+        "    except ValueError:\n",
+        "        print(\"Invalid input. Please enter an integer.\")\n",
+        "\n",
+        "# Call the main function to run the program\n",
+        "main()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "zYVySR2Kp8Zs",
+        "outputId": "0ddfc14b-aff7-4cc8-cd4d-66a6b91d7fe8"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter a non-negative integer to calculate its factorial: 8\n",
+            "The factorial of 8 is 40320\n",
+            "BIG Number\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "def calcFact(n):: This defines a function named calcFact that takes one argument, n. This function is responsible for calculating the factorial of n.\n",
+        "result = 1: Inside calcFact, a variable result is initialized to 1. This is because the factorial of 0 is 1, and it serves as the starting point for the multiplication in the loop.\n",
+        "for i in range(1, n + 1):: This is a for loop that iterates from 1 up to and including the value of n.\n",
+        "result = result * i: In each iteration of the loop, the current value of result is multiplied by the loop counter i. This is how the factorial is calculated (e.g., 1 * 2 * 3 * ... * n).\n",
+        "return result: After the loop finishes, the function returns the final calculated result, which is the factorial of n.\n",
+        "def main():: This defines the main function of the program, where the primary logic resides.\n",
+        "num_str = input(\"Enter a non-negative integer to calculate its factorial: \"): This line prompts the user to enter a non-negative integer using the input() function. The input is stored as a string in the num_str variable.\n",
+        "try:: This starts a try block, which is used for error handling. It attempts to execute the code within the block, and if an error occurs, it will jump to the corresponding except block.\n",
+        "num = int(num_str): This line attempts to convert the user's input (which is a string) into an integer using int().\n",
+        "if num < 0:: This checks if the converted number num is negative.\n",
+        "print(\"Factorial is not defined for negative numbers.\"): If num is negative, this message is printed because factorials are not defined for negative numbers.\n",
+        "else:: If num is not negative, the code inside the else block is executed.\n",
+        "FACT = calcFact(num): The calcFact function is called with the user's input num, and the returned factorial value is stored in the FACT variable.\n",
+        "print(\"The factorial of\", num, \"is\", FACT): This line prints the calculated factorial to the console.\n",
+        "if FACT > 100:: This checks if the calculated factorial FACT is greater than 100. This is an arbitrary threshold used to categorize the number as \"BIG\" or \"small\".\n",
+        "print(\"BIG Number\"): If FACT is greater than 100, this message is printed.\n",
+        "else:: If FACT is not greater than 100, the code in the else block is executed.\n",
+        "print(\"small number\"): This message is printed if the factorial is not considered a \"BIG Number\" based on the threshold.\n",
+        "except ValueError:: This is the except block that is executed if a ValueError occurs within the try block. A ValueError would happen if the user enters something that cannot be converted to an integer (e.g., text).\n",
+        "print(\"Invalid input. Please enter an integer.\"): If a ValueError occurs, this message is printed to inform the user that their input was invalid.\n",
+        "main(): This line calls the main() function to start the execution of the program.\n",
+        "In summary, the program takes an integer input from the user, calculates its factorial using the calcFact function, and then prints the result, categorizing it as a \"BIG Number\" or \"small number\" based on a predefined threshold. It also includes error handling for non-integer and negative inputs.\n",
+        "\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "fDjf7HJkrA-f"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "task:2 Write the Python code for Fibonacci as shown below and execute.\n",
+        "• Ask AI to improve variable names, add comments, and apply PEP8 formatting\n",
+        "(cleaned up).\n",
+        "• Students evaluate which suggestions improve readability most. one.\n"
+      ],
+      "metadata": {
+        "id": "PziiM-QRsAA3"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "prompt:write a python program for fibbonocci seriesand improve variable names,add comments and apply PEP8 format"
+      ],
+      "metadata": {
+        "id": "9w8Lo9fBsJn9"
+      }
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "0a91f523",
+        "outputId": "5cb28515-c938-4e24-f73b-d6fc1371a613"
+      },
+      "source": [
+        "def generate_fibonacci_series(n_terms):\n",
+        "    \"\"\"\n",
+        "    Generates the Fibonacci series up to a specified number of terms.\n",
+        "\n",
+        "    Args:\n",
+        "        n_terms: The number of terms to generate in the Fibonacci series.\n",
+        "\n",
+        "    Returns:\n",
+        "        A list containing the Fibonacci series.\n",
+        "    \"\"\"\n",
+        "    # Initialize the first two terms of the Fibonacci series\n",
+        "    fibonacci_series = [0, 1]\n",
+        "\n",
+        "    # Check if the number of terms is valid\n",
+        "    if n_terms <= 0:\n",
+        "        return \"Please enter a positive integer for the number of terms.\"\n",
+        "    elif n_terms == 1:\n",
+        "        return [0]\n",
+        "    elif n_terms == 2:\n",
+        "        return fibonacci_series\n",
+        "    else:\n",
+        "        # Generate subsequent terms\n",
+        "        while len(fibonacci_series) < n_terms:\n",
+        "            next_term = fibonacci_series[-1] + fibonacci_series[-2]\n",
+        "            fibonacci_series.append(next_term)\n",
+        "        return fibonacci_series\n",
+        "\n",
+        "# Get the number of terms from the user\n",
+        "try:\n",
+        "    num_terms = int(input(\"Enter the number of terms for the Fibonacci series: \"))\n",
+        "    # Generate and print the Fibonacci series\n",
+        "    fib_series = generate_fibonacci_series(num_terms)\n",
+        "    print(\"Fibonacci series:\", fib_series)\n",
+        "except ValueError:\n",
+        "    print(\"Invalid input. Please enter an integer.\")"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter the number of terms for the Fibonacci series: 6\n",
+            "Fibonacci series: [0, 1, 1, 2, 3, 5]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "explanation:def generate_fibonacci_series(n_terms):: This defines a function called generate_fibonacci_series that takes one argument, n_terms. This argument represents the desired number of terms in the Fibonacci series.\n",
+        "Docstring: The triple-quoted string right after the function definition is a docstring. It explains what the function does, its arguments (Args), and what it returns (Returns). This is good practice for code documentation.\n",
+        "fibonacci_series = [0, 1]: Inside the function, a list named fibonacci_series is initialized with the first two numbers of the Fibonacci sequence: 0 and 1. These are the base cases for the series.\n",
+        "Input Validation (if and elif blocks): The code then checks the value of n_terms:\n",
+        "if n_terms <= 0:: If the user asks for zero or a negative number of terms, the function returns a message indicating that a positive integer is required.\n",
+        "elif n_terms == 1:: If the user asks for 1 term, the function returns a list containing only the first term, [0].\n",
+        "elif n_terms == 2:: If the user asks for 2 terms, the function returns the initial list containing the first two terms, [0, 1].\n",
+        "Generating Subsequent Terms (else and while block): If n_terms is greater than 2, the code enters the else block:\n",
+        "while len(fibonacci_series) < n_terms:: This is a while loop that continues as long as the number of terms currently in the fibonacci_series list is less than the desired number of terms (n_terms).\n",
+        "next_term = fibonacci_series[-1] + fibonacci_series[-2]: Inside the loop, the next_term in the series is calculated by adding the last two terms in the fibonacci_series list. fibonacci_series[-1] accesses the last element, and fibonacci_series[-2] accesses the second-to-last element.\n",
+        "fibonacci_series.append(next_term): The calculated next_term is added to the end of the fibonacci_series list.\n",
+        "return fibonacci_series: Once the while loop finishes (meaning the list has reached the desired number of terms), the function returns the complete fibonacci_series list.\n",
+        "Getting User Input and Error Handling (try...except block):\n",
+        "try:: This block attempts to execute the code within it. This is used to handle potential errors.\n",
+        "num_terms = int(input(\"Enter the number of terms for the Fibonacci series: \")): This line prompts the user to enter the desired number of terms and tries to convert the input string into an integer.\n",
+        "fib_series = generate_fibonacci_series(num_terms): If the input is successfully converted to an integer, the generate_fibonacci_series function is called with the user's input.\n",
+        "print(\"Fibonacci series:\", fib_series): The result returned by the function (either the list of terms or an error message) is printed to the console.\n",
+        "except ValueError:: If the user enters something that cannot be converted to an integer (like text), a ValueError occurs, and the code inside this except block is executed.\n",
+        "print(\"Invalid input. Please enter an integer.\"): This message is printed if a ValueError occurs, informing the user that their input was invalid."
+      ],
+      "metadata": {
+        "id": "W8lXnhw3tAk7"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "task3:\n",
+        "• Write a Python script with 3–4 functions (e.g., calculator: add, subtract, multiply,\n",
+        "divide).\n",
+        "• Incorporate manual docstring in code with NumPy Style\n",
+        "• Use AI assistance to generate a module-level docstring + individual function\n",
+        "docstrings.\n",
+        "• Compare the AI-generated docstring with your manually written one"
+      ],
+      "metadata": {
+        "id": "vJ8tIeAntIZb"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "prompt:generate a python code with 4 functions like add ,subtract,multiply and divide give it with module level docstring +individual function docstring."
+      ],
+      "metadata": {
+        "id": "MBlBR307tXrS"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# This is a simple calculator module that includes functions\n",
+        "# to add, subtract, multiply, and divide two numbers.\n",
+        "\n",
+        "# Function to add two numbers\n",
+        "def add(a, b):\n",
+        "    # Returns the sum of a and b\n",
+        "    return a + b\n",
+        "\n",
+        "# Function to subtract the second number from the first\n",
+        "def subtract(a, b):\n",
+        "    # Returns the result of a minus b\n",
+        "    return a - b\n",
+        "\n",
+        "# Function to multiply two numbers\n",
+        "def multiply(a, b):\n",
+        "    # Returns the product of a and b\n",
+        "    return a * b\n",
+        "\n",
+        "# Function to divide the first number by the second\n",
+        "def divide(a, b):\n",
+        "    # If b is 0, raise an error to avoid dividing by zero\n",
+        "    if b == 0:\n",
+        "        raise ZeroDivisionError(\"Cannot divide by zero.\")\n",
+        "    # Returns the result of a divided by b\n",
+        "    return a / b"
+      ],
+      "metadata": {
+        "id": "MMRh5ignzryW"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "7b0db210"
+      },
+      "source": [
+        "\"\"\"\n",
+        "This is a simple calculator module that provides functions to\n",
+        "add, subtract, multiply, and divide two numbers.\n",
+        "\n",
+        "Each function takes two numeric inputs and returns the result.\n",
+        "\"\"\"\n",
+        "\n",
+        "def add(a, b):\n",
+        "    \"\"\"\n",
+        "    Adds two numbers and returns the result.\n",
+        "\n",
+        "    Parameters:\n",
+        "    a - The first number\n",
+        "    b - The second number\n",
+        "\n",
+        "    Returns:\n",
+        "    The sum of a and b\n",
+        "    \"\"\"\n",
+        "    return a + b\n",
+        "\n",
+        "def subtract(a, b):\n",
+        "    \"\"\"\n",
+        "    Subtracts the second number from the first and returns the result.\n",
+        "\n",
+        "    Parameters:\n",
+        "    a - The number to subtract from\n",
+        "    b - The number to subtract\n",
+        "\n",
+        "    Returns:\n",
+        "    The result of a minus b\n",
+        "    \"\"\"\n",
+        "    return a - b\n",
+        "\n",
+        "def multiply(a, b):\n",
+        "    \"\"\"\n",
+        "    Multiplies two numbers and returns the result.\n",
+        "\n",
+        "    Parameters:\n",
+        "    a - The first number\n",
+        "    b - The second number\n",
+        "\n",
+        "    Returns:\n",
+        "    The product of a and b\n",
+        "    \"\"\"\n",
+        "    return a * b\n",
+        "\n",
+        "def divide(a, b):\n",
+        "    \"\"\"\n",
+        "    Divides the first number by the second and returns the result.\n",
+        "\n",
+        "    Parameters:\n",
+        "    a - The numerator\n",
+        "    b - The denominator\n",
+        "\n",
+        "    Returns:\n",
+        "    The result of a divided by b\n",
+        "\n",
+        "    Note:\n",
+        "    If b is zero, this function will raise a ZeroDivisionError.\n",
+        "    \"\"\"\n",
+        "    if b == 0:\n",
+        "        raise ZeroDivisionError(\"Cannot divide by zero.\")\n",
+        "    return a / b"
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "comparision:The manually written docstrings are simple and easy to understand, making them suitable for beginners or small projects. In contrast, the AI-generated NumPy-style docstrings are more structured, detailed, and professional, including parameter types, return types, and exception handling. Overall, the AI version is better suited for large or collaborative projects where clear and standardized documentation is important."
+      ],
+      "metadata": {
+        "id": "XPMmWmTayzDS"
+      }
+    }
+  ]
+}
